@@ -1486,7 +1486,7 @@ class Word2Vec(utils.SaveLoad):
             Number of raw words in the corpus chunk.
 
         """
-        return sum(len(sentence) for sentence in job)
+        return sum(len(list(sentence)) for sentence in job)
 
     def _check_corpus_sanity(self, corpus_iterable=None, corpus_file=None, passes=1):
         """Checks whether the corpus parameters make sense."""
